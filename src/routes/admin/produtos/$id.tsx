@@ -233,13 +233,22 @@ function EditarProdutoPage() {
 
           <div>
             <label className="block text-xs uppercase tracking-widest text-muted-foreground">
-              URL da Imagem
+              Imagem do Programa (JPG/PNG)
             </label>
             <input
-              type="url"
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
-              className="mt-2 block w-full border-b border-border bg-transparent py-2 text-sm focus:border-foreground focus:outline-none"
+              type="file"
+              accept=".jpg,.jpeg,.png"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) {
+                  const reader = new FileReader();
+                  reader.onloadend = () => {
+                    setImage(reader.result as string);
+                  };
+                  reader.readAsDataURL(file);
+                }
+              }}
+              className="mt-2 block w-full text-sm text-muted-foreground file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-primary file:text-primary-foreground hover:file:bg-primary/90"
             />
             {image && (
               <img

@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS wespop CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE wespop;
+-- CREATE DATABASE IF NOT EXISTS wespop CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- USE wespop;
 
 CREATE TABLE IF NOT EXISTS admin_users (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS products (
   description TEXT,
   details JSON,
   price DECIMAL(10, 2) NOT NULL,
-  image VARCHAR(500) DEFAULT '',
+  image LONGTEXT,
   category_id INT,
   is_active BOOLEAN NOT NULL DEFAULT TRUE,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,

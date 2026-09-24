@@ -10,6 +10,7 @@ async function initDatabase() {
   const port = Number(process.env.VITE_MYSQL_PORT) || 3306;
   const user = process.env.VITE_MYSQL_USER || "root";
   const password = process.env.VITE_MYSQL_PASSWORD || "";
+  const database = process.env.VITE_MYSQL_DATABASE || "wespop";
 
   console.log(`Conectando ao MySQL em ${host}:${port} como usuário '${user}'...`);
 
@@ -20,7 +21,9 @@ async function initDatabase() {
       port,
       user,
       password,
-      multipleStatements: true, // Permite rodar múltiplas queries de uma vez
+      database,
+      multipleStatements: true,
+      ssl: host !== "localhost" ? { rejectUnauthorized: false } : undefined, // Permite rodar múltiplas queries de uma vez
     });
 
     console.log("✅ Conectado ao MySQL com sucesso!");

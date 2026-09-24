@@ -14,6 +14,7 @@ export function getPool(): Pool {
       waitForConnections: true,
       connectionLimit: 10,
       queueLimit: 0,
+      ssl: process.env.VITE_MYSQL_HOST !== 'localhost' ? { rejectUnauthorized: false } : undefined,
     });
   }
   return pool;

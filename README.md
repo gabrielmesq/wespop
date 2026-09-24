@@ -1,6 +1,6 @@
-# Pure Style Shop
+# WESPOP
 
-Bem-vindo ao repositório do **Pure Style Shop**, um e-commerce minimalista focado na venda de produtos masculinos, femininos e personalizados.
+Bem-vindo ao repositório do **WESPOP**, um e-commerce minimalista focado na venda de produtos masculinos, femininos e personalizados.
 
 Este documento foi criado para orientar você, cliente, sobre como colocar o projeto no ar, configurar banco de dados, meios de pagamento e como gerenciar os arquivos de configuração (o famoso `.env`).
 
@@ -13,7 +13,7 @@ Este sistema foi construído usando tecnologias modernas (Node.js, React, Banco 
 1. **Hospedagem com suporte a Node.js**: Onde o sistema vai ficar ligado 24h por dia.
 2. **Banco de Dados MySQL**: Para salvar os produtos, categorias e usuários.
 3. **Conta no Mercado Pago**: Para gerar os tokens de pagamento (produção e teste) e receber as vendas.
-4. **Domínio**: O endereço do seu site (ex: `www.purestyleshop.com.br`).
+4. **Domínio**: O endereço do seu site (ex: `www.wespop.com.br`).
 
 ---
 
@@ -39,7 +39,7 @@ Caso você mesmo ou seu desenvolvedor vá fazer o deploy, aqui está o resumo do
 
 1. **Criar Banco de Dados MySQL**:
    - No painel de controle, vá em "Bancos de Dados MySQL".
-   - Crie um banco (ex: `purestyle_db`).
+   - Crie um banco (ex: `wespop_db`).
    - Crie um usuário com senha forte e dê todos os privilégios a este banco.
    - Anote esses dados (Host, Nome do Banco, Usuário e Senha), você usará no `.env`.
 
